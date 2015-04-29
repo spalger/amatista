@@ -1,4 +1,4 @@
 require "spec"
-require "../src/amatista"
+require "../src/amatista_quick"
 
 include Amatista

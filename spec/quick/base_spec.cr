@@ -1,8 +1,8 @@
-require "./spec_helper"
+require "../spec_helper"
 
-describe Base do
+describe Quick::Base do
   it "gets a get request" do
-    app = Base.new
+    app = Quick::Base.new
     
     html_result = "<html><body>Hello World</body></html>"
     app.get("/") { app.respond_to(:html, html_result) }.body.should eq(html_result)
@@ -10,7 +10,7 @@ describe Base do
 
   context "#process" do
     it "receive an http request" do
-      app = Base.new
+      app = Quick::Base.new
 
       html_result = "<html><body>Hello World</body></html>"
       app.get("/") { app.respond_to(:html, html_result) }
@@ -29,7 +29,7 @@ describe Base do
 
   context "redirect_to" do
     it "redirects to /" do
-      app = Base.new
+      app = Quick::Base.new
       html_result = "<html><body>Hello World</body></html>"
       app.get("/") { app.respond_to(:html, html_result) }
 
